@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+# The .sync installation directory
+INSTALL_DIR = File.dirname(File.expand_path('.', __FILE__))
+
+# The base directory for the content to be synced
+BASE_DIR = File.expand_path(File.join(INSTALL_DIR, '..'))
+
+# The directory where content will be synced to
+CONTENT_DIR = File.join BASE_DIR, '.sync_content'
+
+# The SYNC_CONF_DIR directory contains files with
+# the path of a file to be synced per line. If the
+# path matches a directory, the whole directory is
+# synced. These paths may also contain Dir.glob
+# compatible wildcards/matchers.
+PLUGINS_DIR_NAME = 'plugins'
+PLUGINS_DIR = File.join(INSTALL_DIR, PLUGINS_DIR_NAME)
+
+CONF_FILE_NAME = 'config'
+CONF_FILE = File.join(INSTALL_DIR, CONF_FILE_NAME)
+
+LOG_LEVEL = :warn
+
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+require 'syncer'
+$LOAD_PATH.shift
+
+Syncer.new.run
