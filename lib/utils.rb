@@ -1,7 +1,8 @@
-module Syncer::Utils
+module Utils
   require 'utils/logger'
+  require 'utils/git_repo'
 
   def log
-    @logger = Logger.new
+    @logger ||= Logger.new
   end
 end

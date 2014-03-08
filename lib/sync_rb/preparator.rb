@@ -1,6 +1,6 @@
-class Syncer::Preparator
+class SyncRb::Preparator
 
-  def base_dir
+  def content_dir
     unless File.exists?(CONTENT_DIR)
       Dir.mkdir(CONTENT_DIR)
     end

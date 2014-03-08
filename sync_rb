@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+load File.expand_path(File.join('..', 'config'), __FILE__)
+
+$LOAD_PATH.unshift File.expand_path(File.join('..', 'lib'), __FILE__)
+require 'sync_rb'
+$LOAD_PATH.shift
+
+SyncRb::Cli.new.run ARGV
+
+$LOAD_PATH.shift

@@ -1,4 +1,4 @@
-class Syncer::Utils::Logger
+class Utils::Logger
 
   def debug(message)
     puts "[DEBUG] #{message}" if should_log(:debug)
