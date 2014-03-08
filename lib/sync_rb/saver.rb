@@ -6,7 +6,7 @@ class SyncRb::Saver
   def run
     prepare.content_dir
     sync_to_content_dir
-    #git.send_content_dir
+    git.send_content_dir
   end
 
   def sync_to_content_dir
