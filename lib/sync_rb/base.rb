@@ -18,7 +18,7 @@ module SyncRb::Base
 
   def make_dir(path)
     path = escape_path(path)
-    command "mkdir -p \"#{path}\""
+    command "mkdir -p \"#{path}\"" unless $dry_run
   end
 
   def escape_path(path)
